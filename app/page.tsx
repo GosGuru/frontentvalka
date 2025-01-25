@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
-
   return (
     <div className="bg-[#1a1a1a] text-white min-h-screen flex flex-col justify-between">
       {/* Hero Section */}
