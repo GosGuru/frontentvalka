@@ -5,11 +5,6 @@ import Link from "next/link";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Searching for:", searchTerm);
-  };
-
   return (
     <div className="bg-[#1a1a1a] text-white min-h-screen flex flex-col justify-between">
       {/* Hero Section */}
