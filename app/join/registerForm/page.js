@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ENV } from "../utils";
+import { ENV } from "../../utils";
 
 export default function Register() {
   const [username, setUsername] = useState("");
