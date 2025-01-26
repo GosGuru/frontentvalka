@@ -1,7 +1,10 @@
+import { ENV } from "../utils";
+
+
 // src/api/getEjercicioConVideo.js
 export const getEjercicioConVideo = async (exerciseId) => {
   try {
-    const url = `http://localhost:1337/api/ejercicios/${exerciseId}?populate=videoURL`; // Asegura que se incluye 'videoURL'
+    const url = `${ENV.API_BASE_URL}/api/ejercicios/${exerciseId}?populate=videoURL`; // Asegura que se incluye 'videoURL'
 
     const response = await fetch(url, {
       headers: {
