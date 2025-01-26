@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ENV } from "../utils";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:1337/api/auth/local/register",
+        `${ENV.api_url}/auth/local/register",
         {
           method: "POST",
           headers: {
