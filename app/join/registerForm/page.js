@@ -58,15 +58,15 @@ export default function Register() {
         >
           <h2 className="text-2xl font-bold text-center mb-6">Registrarse</h2>
 
-          {message && (
-            <div
-              className={`p-3 mb-4 text-center rounded-lg ${
-                isSuccess ? "bg-green-500" : "bg-red-500"
-              }`}
-            >
-              {message}
-            </div>
-          )}
+        {message && (
+  <div
+    className={`p-3 mb-4 text-center rounded-lg ${
+      isSuccess ? "bg-green-500" : "bg-red-500"
+    }`}
+  >
+    {message}
+  </div>
+)}
 
           <div className="mb-4">
             <label htmlFor="username" className="block mb-2 text-sm">
