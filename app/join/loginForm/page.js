@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ENV } from "../utils";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:1337/api/auth/local", {
+      const response = await fetch(`${ENV.API_BASE_URL}/api/auth/local`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
