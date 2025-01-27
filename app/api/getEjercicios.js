@@ -3,6 +3,7 @@ import { ENV } from "../utils";
 export const getEjercicios = async (blockId) => {
   try {
     const token = localStorage.getItem("token");
+    console.log('tokenme'+ token);
     if (!token) {
       throw new Error("Falta el token de autenticación");
     }
