@@ -44,7 +44,7 @@ export default function Header() {
               }}
             >
               <Image
-                src="/logo.png" // Ruta al logo en la carpeta public
+                src="/LogoValka.png" // Ruta al logo en la carpeta public
                 alt="Logo Valka"
                 width={40} // Ancho del logo
                 height={40} // Alto del logo
