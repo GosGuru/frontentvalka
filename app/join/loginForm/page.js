@@ -28,11 +28,12 @@ export default function Login() {
       if (response.ok) {
         setIsSuccess(true);
         setMessage("Inicio de sesión exitoso. Redirigiendo...");
-        // Aquí puedes manejar la redirección o guardar el token
-        console.log("guardando token");
-        localStorage.setItem("token", data.jwt);
-        let token = localSotrage.getItem("token");
-        console.log("obteniendo token:" + token;
+        localStorage.setItem("token", data.jwt); // Guarda el token en el almacenamiento local
+        console.log("Guardando token");
+          // Obtén el token después de guardarlo
+          let token = localStorage.getItem("token");
+          console.log("Obteniendo token: " + token);
+
         router.push("/");
       } else {
         setIsSuccess(false);
