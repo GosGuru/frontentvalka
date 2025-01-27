@@ -1,4 +1,3 @@
 export const ENV = {
-  TOKEN: "5bcbf9c2d75bbcba374bcd008444f52964c7b879d312a557fbb351dcd348e0198a9fab77f6300a527e64155ecdb0b3f3140a14b7c689b487019e2162d21e4f85c056f2b6a58f92370bc3f79220d43bfa0ab7c111f4170bb0df55dc1ba5456fcaedc4d191527aa4c88e199717e366267c05222c82f20f311325ec4db5e1273cc6",
   API_BASE_URL: "https://thoughtful-basket-1d2d90aae0.strapiapp.com",
 };
