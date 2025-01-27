@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   Box,
   IconButton,
@@ -29,31 +29,25 @@ export default function Header() {
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between", // Distribuye los elementos
+            justifyContent: "space-between",
             alignItems: "center",
-            width: "100%", // Para ocupar todo el ancho del contenedor
+            width: "100%",
           }}
         >
-            {/* Logo con enlace al index */}
+          {/* Logo con enlace al index */}
           <Link href="/" passHref>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                cursor: "pointer",
-              }}
-            >
+            <Box sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
               <Image
-                src="../../public/LogoValka.png" 
+                src="/LogoValka.png" // Ruta relativa para el componente Image
                 alt="Logo Valka"
-                width={40} // Ancho del logo
-                height={40} // Alto del logo
-                priority // Optimización de carga
+                width={40}
+                height={40}
+                priority
               />
             </Box>
           </Link>
 
-          {/* Navigation for larger screens */}
+          {/* Navegación para pantallas grandes */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -62,33 +56,24 @@ export default function Header() {
               justifyContent: "center",
             }}
           >
-            <a
-              href="../pages/sobrenosotros"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <Link href="/sobrenosotros" passHref>
               <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
                 Sobre Nosotros
               </Button>
-            </a>
-            <a
-              href="../routines"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            </Link>
+            <Link href="/routines" passHref>
               <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
                 Rutinas
               </Button>
-            </a>
-            <a
-              href="../pages/contact"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            </Link>
+            <Link href="/contact" passHref>
               <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
                 Contacto
               </Button>
-            </a>
+            </Link>
           </Box>
 
-          {/* Login and Register Buttons for larger screens */}
+          {/* Botones de Inicio de Sesión y Registro */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             <Link href="/join/loginForm" passHref>
               <Button
@@ -117,11 +102,11 @@ export default function Header() {
             </Link>
           </Box>
 
-          {/* Menu button for smaller screens */}
+          {/* Botón de menú para pantallas pequeñas */}
           <IconButton
             edge="start"
             color="inherit"
-            aria-label="menu"
+            aria-label="Abrir menú"
             sx={{ display: { xs: "flex", md: "none" } }}
             onClick={toggleMenu}
           >
@@ -130,7 +115,7 @@ export default function Header() {
         </Toolbar>
       </Container>
 
-      {/* Collapsible Menu for smaller screens */}
+      {/* Menú desplegable para pantallas pequeñas */}
       <Collapse in={menuOpen} timeout="auto" unmountOnExit>
         <Box
           sx={{
@@ -141,38 +126,32 @@ export default function Header() {
             boxShadow: 3,
           }}
         >
-          <a href="#about" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link href="/sobrenosotros" passHref>
             <Button
               fullWidth
               sx={{ color: "white", "&:hover": { color: "#f94510" } }}
             >
               Sobre Nosotros
             </Button>
-          </a>
-          <a
-            href="#routines"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
+          </Link>
+          <Link href="/routines" passHref>
             <Button
               fullWidth
               sx={{ color: "white", "&:hover": { color: "#f94510" } }}
             >
               Rutinas
             </Button>
-          </a>
-          <a
-            href="#contact"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
+          </Link>
+          <Link href="/contact" passHref>
             <Button
               fullWidth
               sx={{ color: "white", "&:hover": { color: "#f94510" } }}
             >
               Contacto
             </Button>
-          </a>
+          </Link>
 
-          {/* Login and Register Buttons */}
+          {/* Botones de Inicio de Sesión y Registro */}
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 2 }}>
             <Link href="/join/loginForm" passHref>
               <Button
