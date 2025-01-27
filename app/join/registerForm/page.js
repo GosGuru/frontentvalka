@@ -15,7 +15,8 @@ export default function Register() {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${ENV.API_BASE_URL}/auth/local/register`,
+        `${ENV.API_BASE_URL}
+/api/auth/local/register`,
         {
           method: "POST",
           headers: {
