@@ -5,7 +5,7 @@ export const getEjercicios = async (blockId) => {
     const url = `${ENV.API_BASE_URL}/api/rutinas/${blockId}?populate=*`;
     const response = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${ENV.TOKEN}`,
+        Authorization: `Bearer ${ENV.TOKEN}`,  // Token del usuario autenticado
       },
     });
 
@@ -14,7 +14,9 @@ export const getEjercicios = async (blockId) => {
     }
 
     const data = await response.json();
-    return data.data.ejercicios || [];
+    
+    // Aseguramos que 'data.data' exista y devolvemos los ejercicios o un array vacío
+    return data?.data?.ejercicios || [];
   } catch (error) {
     console.error("Error en getEjercicios:", error);
     throw error;
