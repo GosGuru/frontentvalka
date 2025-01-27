@@ -7,23 +7,23 @@ body {
   flex-direction: column;
 }
 
-/* Contenedor principal del layout */
+/* Layout principal */
 .layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Asegura que el contenido tome el espacio disponible */
+/* Contenedor del contenido */
 .content-container {
-  flex: 1; /* Toma todo el espacio sobrante */
+  flex: 1; /* Ocupa el espacio disponible */
   display: flex;
   flex-direction: column;
 }
 
 /* Contenedor del footer */
 .footer-container {
-  position: relative; /* Se ajusta automáticamente al flujo del layout */
+  position: relative; /* Se ajusta al flujo del layout */
   z-index: 1000;
 }
 
