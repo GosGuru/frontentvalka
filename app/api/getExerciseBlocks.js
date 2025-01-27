@@ -2,19 +2,17 @@ import { ENV } from "../utils";
 
 export const getExerciseBlocks = async () => {
   try {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");  // Obtener el token dinámicamente
     if (!token) {
       throw new Error("Falta el token de autenticación");
     }
 
     const response = await fetch(`${ENV.API_BASE_URL}/api/rutinas`, {
       headers: {
-        Authorization: `Bearer ${ENV.TOKEN}`,
+        Authorization: `Bearer ${token}`,  // Utiliza el token dinámico aquí
         "Content-Type": "application/json",
       },
     });
-
-
 
     if (!response.ok) {
       const errorData = await response.json();
@@ -29,3 +27,4 @@ export const getExerciseBlocks = async () => {
     return [];
   }
 };
+
