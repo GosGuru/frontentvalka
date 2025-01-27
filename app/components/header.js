@@ -34,19 +34,23 @@ export default function Header() {
             width: "100%", // Para ocupar todo el ancho del contenedor
           }}
         >
-          {/* Logo with Link to index */}
+            {/* Logo con enlace al index */}
           <Link href="/" passHref>
-            <Typography
-              variant="h6"
-              component="div"
+            <Box
               sx={{
-                color: "#f94510",
-                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
                 cursor: "pointer",
               }}
             >
-              Valka
-            </Typography>
+              <Image
+                src="/logo.png" // Ruta al logo en la carpeta public
+                alt="Logo Valka"
+                width={40} // Ancho del logo
+                height={40} // Alto del logo
+                priority // Optimización de carga
+              />
+            </Box>
           </Link>
 
           {/* Navigation for larger screens */}
