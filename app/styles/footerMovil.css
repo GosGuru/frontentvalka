@@ -1,25 +1,16 @@
-/* Estilos base para el footer */
+/* Estilos generales para el footer en móviles */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7); /* Fondo traslúcido */
-  backdrop-filter: blur(10px); /* Efecto blur como en iPhone */
-  border-top: 1px solid rgba(255, 165, 0, 0.5); /* Borde naranja oscuro translúcido */
+  background-color: #000; /* Fondo oscuro */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 15px 0;
-  box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+  padding: 10px 0;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
   z-index: 100;
-  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Efecto hover en el footer */
-.footer:hover {
-  background: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al hacer hover */
-  box-shadow: 0px -6px 20px rgba(0, 0, 0, 0.5); /* Aumenta la sombra en hover */
 }
 
 /* Botones del footer */
@@ -29,48 +20,53 @@
   text-align: center;
   padding: 5px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  color: #fff; /* Texto blanco */
+  position: relative;
+  flex: 1; /* Todos los botones ocupan espacio proporcional */
 }
 
-/* Iconos del footer */
+/* Estilos para el botón central */
+.footer-button:nth-child(2) {
+  background-color: rgba(255, 102, 0, 0.2); /* Fondo traslúcido para el círculo */
+  padding: 10px;
+  border-radius: 50%;
+  transform: scale(1.2); /* Aumenta el tamaño para destacarlo */
+}
+
+/* Iconos generales del footer */
 .footer-icon {
-  font-size: 28px;
-  color: rgba(255, 165, 0, 0.8); /* Naranja oscuro translúcido */
-  transition: color 0.2s ease-in-out;
+  font-size: 30px;
+  color: #fff;
 }
 
-/* Texto de los botones */
+/* Icono central destacado */
+.footer-button:nth-child(2) .footer-icon {
+  color: #FF6600; /* Naranja oscuro para el icono central */
+}
+
+/* Texto debajo de los iconos */
 .footer-button span {
-  font-size: 13px;
-  color: rgba(255, 165, 0, 0.7); /* Texto en naranja oscuro */
-  margin-top: 5px;
   display: block;
-  transition: color 0.2s ease-in-out;
+  font-size: 12px;
+  color: #fff; /* Texto blanco */
+  margin-top: 5px;
 }
 
-/* Hover en los botones */
-.footer-button:hover .footer-icon {
-  color: rgba(255, 165, 0, 1); /* Naranja más intenso al hacer hover */
-  transform: scale(1.2); /* Aumenta el tamaño del icono al hacer hover */
+/* Texto y efecto naranja del botón central */
+.footer-button:nth-child(2) span {
+  color: #FF6600; /* Texto naranja */
+  font-weight: bold;
 }
 
+/* Efectos hover */
+.footer-button:hover .footer-icon,
 .footer-button:hover span {
-  color: rgba(255, 165, 0, 1); /* Naranja más brillante en el texto */
+  color: #FF6600; /* Naranja oscuro en hover */
 }
 
-/* Animación para mostrar el footer suavemente */
-.footer {
-  animation: fadeInUp 0.5s ease-in-out;
-}
-
-/* Keyframes para animación de entrada */
-@keyframes fadeInUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+/* Aplicar solo en móviles */
+@media (min-width: 768px) {
+  .footer {
+    display: none; /* Esconder el footer en pantallas más grandes */
   }
 }
