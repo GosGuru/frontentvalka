@@ -41,7 +41,7 @@ export default function Header() {
                 src="/LogoValka.png" // Ruta relativa para el componente Image
                 alt="Logo Valka"
                 width={150}
-                height={65}
+                height={45}
                 priority
               />
             </Box>
