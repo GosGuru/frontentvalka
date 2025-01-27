@@ -1,42 +1,76 @@
+/* Estilos base para el footer */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7); /* Fondo traslúcido */
+  backdrop-filter: blur(10px); /* Efecto blur como en iPhone */
+  border-top: 1px solid rgba(255, 165, 0, 0.5); /* Borde naranja oscuro translúcido */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+  z-index: 100;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover en el footer */
+.footer:hover {
+  background: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al hacer hover */
+  box-shadow: 0px -6px 20px rgba(0, 0, 0, 0.5); /* Aumenta la sombra en hover */
+}
+
+/* Botones del footer */
+.footer-button {
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Iconos del footer */
+.footer-icon {
+  font-size: 28px;
+  color: rgba(255, 165, 0, 0.8); /* Naranja oscuro translúcido */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Texto de los botones */
+.footer-button span {
+  font-size: 13px;
+  color: rgba(255, 165, 0, 0.7); /* Texto en naranja oscuro */
+  margin-top: 5px;
+  display: block;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover en los botones */
+.footer-button:hover .footer-icon {
+  color: rgba(255, 165, 0, 1); /* Naranja más intenso al hacer hover */
+  transform: scale(1.2); /* Aumenta el tamaño del icono al hacer hover */
+}
+
+.footer-button:hover span {
+  color: rgba(255, 165, 0, 1); /* Naranja más brillante en el texto */
+}
+
+/* Animación para mostrar el footer suavemente */
+.footer {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Keyframes para animación de entrada */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
   }
-  
-  .footer-button {
-    background: none;
-    border: none;
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .footer-icon {
-    font-size: 30px;
-    color: #333;
-  }
-  
-  .footer-button span {
-    font-size: 12px;
-    color: #333;
-    margin-top: 5px;
-  }
-  
-  .footer-button:hover .footer-icon {
-    color: #007bff; /* Cambia el color al pasar el cursor */
-  }
-  
-  .footer-button:hover span {
-    color: #007bff;
-  }
-  
+}
