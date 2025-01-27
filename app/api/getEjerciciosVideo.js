@@ -4,8 +4,9 @@ import { ENV } from "../utils";
 // src/api/getEjercicioConVideo.js
 export const getEjercicioConVideo = async (exerciseId) => {
   try {
+    
     const url = `${ENV.API_BASE_URL}/api/ejercicios/${exerciseId}?populate=videoURL`; // Asegura que se incluye 'videoURL'
-
+    console.log(url);
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${ENV.TOKEN}`,
