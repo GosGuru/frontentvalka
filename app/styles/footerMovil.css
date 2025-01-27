@@ -1,3 +1,32 @@
+/* Asegura que el layout ocupe todo el viewport */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal del layout */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Asegura que el contenido tome el espacio disponible */
+.content-container {
+  flex: 1; /* Toma todo el espacio sobrante */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor del footer */
+.footer-container {
+  position: relative; /* Se ajusta automáticamente al flujo del layout */
+  z-index: 1000;
+}
+
 /* Footer móvil estilizado */
 .footer {
   position: fixed;
