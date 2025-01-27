@@ -26,18 +26,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header />
-        {children}
-     <div className="block sm:hidden footer-container">
-  <Footer />
-</div>
+return (
+  <html lang="en">
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased layout-container`}
+    >
+      <Header />
+      <main className="content-container">{children}</main>
+      <div className="block sm:hidden footer-container">
+        <Footer />
+      </div>
+    </body>
+  </html>
+);
 
-      </body>
-    </html>
-  );
-}
