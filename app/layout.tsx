@@ -33,10 +33,10 @@ export default function RootLayout({
       >
         <Header />
         {children}
-         <div className="block sm:hidden">
-        <Footer />
-      </div>
-      
+     <div className="block sm:hidden footer-container">
+  <Footer />
+</div>
+
       </body>
     </html>
   );
