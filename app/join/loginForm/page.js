@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Revisa si usas la versión correcta de next/router
 import { ENV } from "../../utils";
 
 export default function Login() {
@@ -9,6 +9,7 @@ export default function Login() {
   const [message, setMessage] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const router = useRouter();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -28,17 +29,18 @@ export default function Login() {
       if (response.ok) {
         setIsSuccess(true);
         setMessage("Inicio de sesión exitoso. Redirigiendo...");
-        localStorage.setItem("token", data.jwt); // Guarda el token en el almacenamiento local
-        console.log("Guardando token");
-          // Obtén el token después de guardarlo
-          let token = localStorage.getItem("token");
-          console.log("Obteniendo token: " + token);
+        localStorage.setItem("token", data.jwt); // Guarda el token en localStorage
+        console.log("Token guardado");
 
-        router.push("/");
+        // Obtén el token después de guardarlo
+        const token = localStorage.getItem("token");
+        console.log("Obteniendo token: " + token);
+
+        router.push("/"); // Redirecciona a la página principal
       } else {
         setIsSuccess(false);
         setMessage(
-          data.message || "Credenciales incorrectas. Intenta de nuevo."
+          data.error?.message || "Credenciales incorrectas. Intenta de nuevo."
         );
       }
     } catch (error) {
@@ -54,9 +56,7 @@ export default function Login() {
           onSubmit={handleLogin}
           className="bg-[#222222] p-8 rounded-lg shadow-lg w-full max-w-md"
         >
-          <h2 className="text-2xl font-bold text-center mb-6">
-            Iniciar Sesión
-          </h2>
+          <h2 className="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
 
           {message && (
             <div
@@ -100,10 +100,7 @@ export default function Login() {
           </button>
           <p className="mt-4 text-center text-gray-400">
             ¿No tienes una cuenta?{" "}
-            <a
-              href="/join/registerForm"
-              className="text-[#f94510] hover:underline"
-            >
+            <a href="/join/registerForm" className="text-[#f94510] hover:underline">
               Regístrate
             </a>
           </p>
