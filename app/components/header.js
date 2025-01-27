@@ -23,25 +23,31 @@ export default function Header() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#1a1a1a", boxShadow: 3, width: "100%" }}
+      sx={{
+        backgroundColor: "#1a1a1a",
+        boxShadow: 3,
+        width: "100%",
+        minHeight: "60px", // Reduce la altura mínima del AppBar
+      }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ padding: "0 16px" }}> {/* Reduce el padding horizontal */}
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            width: "100%",
+            padding: "0", // Elimina el padding extra del Toolbar
+            minHeight: "60px", // Reduce la altura del Toolbar
           }}
         >
           {/* Logo con enlace al index */}
           <Link href="/" passHref>
             <Box sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
               <Image
-                src="/LogoValka.png" // Ruta relativa para el componente Image
+                src="/LogoValka.png"
                 alt="Logo Valka"
-                width={150}
-                height={45}
+                width={100} // Logo más pequeño
+                height={45} // Ajusta la altura del logo
                 priority
               />
             </Box>
@@ -51,38 +57,40 @@ export default function Header() {
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              gap: 3,
+              gap: 2, // Reduce el espacio entre los botones
               flexGrow: 1,
               justifyContent: "center",
             }}
           >
             <Link href="/sobrenosotros" passHref>
-              <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
+              <Button sx={{ color: "white", fontSize: "0.875rem", "&:hover": { color: "#f94510" } }}> {/* Texto más pequeño */}
                 Sobre Nosotros
               </Button>
             </Link>
             <Link href="/routines" passHref>
-              <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
+              <Button sx={{ color: "white", fontSize: "0.875rem", "&:hover": { color: "#f94510" } }}>
                 Rutinas
               </Button>
             </Link>
             <Link href="/contact" passHref>
-              <Button sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
+              <Button sx={{ color: "white", fontSize: "0.875rem", "&:hover": { color: "#f94510" } }}>
                 Contacto
               </Button>
             </Link>
           </Box>
 
           {/* Botones de Inicio de Sesión y Registro */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}> {/* Reduce el espacio entre botones */}
             <Link href="/join/loginForm" passHref>
               <Button
                 variant="outlined"
                 sx={{
                   borderColor: "#f94510",
                   color: "#f94510",
+                  fontSize: "0.875rem",
                   "&:hover": { backgroundColor: "#f94510", color: "white" },
                   borderRadius: ".5rem",
+                  padding: "4px 12px", // Reduce el tamaño del botón
                 }}
               >
                 Iniciar Sesión
@@ -93,8 +101,10 @@ export default function Header() {
                 variant="contained"
                 sx={{
                   backgroundColor: "#f94510",
+                  fontSize: "0.875rem",
                   "&:hover": { backgroundColor: "#ffffff", color: "#f94510" },
                   borderRadius: ".5rem",
+                  padding: "4px 12px", // Reduce el tamaño del botón
                 }}
               >
                 Registrarse
@@ -127,26 +137,17 @@ export default function Header() {
           }}
         >
           <Link href="/sobrenosotros" passHref>
-            <Button
-              fullWidth
-              sx={{ color: "white", "&:hover": { color: "#f94510" } }}
-            >
+            <Button fullWidth sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
               Sobre Nosotros
             </Button>
           </Link>
           <Link href="/routines" passHref>
-            <Button
-              fullWidth
-              sx={{ color: "white", "&:hover": { color: "#f94510" } }}
-            >
+            <Button fullWidth sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
               Rutinas
             </Button>
           </Link>
           <Link href="/contact" passHref>
-            <Button
-              fullWidth
-              sx={{ color: "white", "&:hover": { color: "#f94510" } }}
-            >
+            <Button fullWidth sx={{ color: "white", "&:hover": { color: "#f94510" } }}>
               Contacto
             </Button>
           </Link>
