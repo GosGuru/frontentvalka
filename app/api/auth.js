@@ -1,5 +1,9 @@
 import axios from "axios";
 import { ENV } from "../utils";
+    const token = localStorage.getItem("token");  // Obtener el token dinámicamente
+    if (!token) {
+      throw new Error("Falta el token de autenticación");
+    }
 
 const BASE_URL = ENV.API_BASE_URL;
 
