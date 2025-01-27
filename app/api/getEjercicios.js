@@ -2,10 +2,14 @@ import { ENV } from "../utils";
 
 export const getEjercicios = async (blockId) => {
   try {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      throw new Error("Falta el token de autenticación");
+    }
     const url = `${ENV.API_BASE_URL}/api/rutinas/${blockId}?populate=*`;
     const response = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${ENV.TOKEN}`,  // Token del usuario autenticado
+       Authorization: `Bearer ${token}`,
       },
     });
 
