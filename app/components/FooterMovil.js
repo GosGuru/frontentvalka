@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation"; // Importar useRouter para la navegación
-import { Home, Search, AccountCircle, Settings } from "@mui/icons-material"; // Iconos de Material-UI
+import { Home, CalendarToday, Search, Person } from "@mui/icons-material"; // Iconos de Material-UI
 import "../styles/footerMovil.css";
 
 const FooterMovil = () => {
@@ -16,19 +16,19 @@ const FooterMovil = () => {
     <div className="footer">
       <button className="footer-button" onClick={handleBack}>
         <Home className="footer-icon" />
-        <span>Volver</span> {/* Icono de Home */}
+        <span>Volver</span>
       </button>
       <button className="footer-button">
-        <Search className="footer-icon" />
-        <span>Buscar</span> {/* Icono de búsqueda */}
+        <CalendarToday className="footer-icon" /> {/* Icono de calendario para Rutinas */}
+        <span>Rutinas</span>
       </button>
       <button className="footer-button">
-        <AccountCircle className="footer-icon" />
-        <span>Perfil</span> {/* Icono de perfil */}
+        <Search className="footer-icon" /> {/* Icono de búsqueda para Buscar */}
+        <span>Buscar</span>
       </button>
       <button className="footer-button">
-        <Settings className="footer-icon" />
-        <span>Configuración</span> {/* Icono de configuración */}
+        <Person className="footer-icon" /> {/* Icono de perfil para Perfil */}
+        <span>Perfil</span>
       </button>
     </div>
   );
