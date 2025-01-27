@@ -1,10 +1,13 @@
 import { ENV } from "../utils";
+import { useRouter } from "next/router";  // Si estás usando Next.js
+
+const router = useRouter();
 
 useEffect(() => {
   const token = localStorage.getItem("token");
   if (token) {
     console.log("Token encontrado: " + token);
-    // Usar el token aquí o enviarlo en solicitudes
+    // Aquí podrías usar el token si lo necesitas en este componente
   } else {
     console.log("Token no encontrado, redirigiendo a login");
     router.push("/login"); // Redirigir si no hay token
@@ -13,13 +16,16 @@ useEffect(() => {
 
 export const getExerciseBlocks = async () => {
   try {
+    // Obtener el token dentro de la función
+    const token = localStorage.getItem("token");
+    
     if (!token) {
       throw new Error("Falta el token de autenticación");
     }
 
     const response = await fetch(`${ENV.API_BASE_URL}/api/rutinas`, {
       headers: {
-        Authorization: `Bearer ${token}`,  // Utiliza el token dinámico aquí
+        Authorization: `Bearer ${token}`,  // Utiliza el token obtenido aquí
         "Content-Type": "application/json",
       },
     });
@@ -37,4 +43,3 @@ export const getExerciseBlocks = async () => {
     return [];
   }
 };
-
