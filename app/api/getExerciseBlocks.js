@@ -1,8 +1,18 @@
 import { ENV } from "../utils";
 
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    console.log("Token encontrado: " + token);
+    // Usar el token aquí o enviarlo en solicitudes
+  } else {
+    console.log("Token no encontrado, redirigiendo a login");
+    router.push("/login"); // Redirigir si no hay token
+  }
+}, []);
+
 export const getExerciseBlocks = async () => {
   try {
-    const token = localStorage.getItem("token");  // Obtener el token dinámicamente
     if (!token) {
       throw new Error("Falta el token de autenticación");
     }
