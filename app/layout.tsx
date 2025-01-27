@@ -33,7 +33,9 @@ export default function RootLayout({
       >
         <Header />
         {children}
+         <div className="block sm:hidden">
         <Footer />
+      </div>
       
       </body>
     </html>
